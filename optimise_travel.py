@@ -1,9 +1,6 @@
 import streamlit as st
 import googlemaps
 from datetime import datetime
-# Streamlit app
-from streamlit_folium import folium_static
-import folium
 import os
 
 # Your Python function here (optimize_child_travel_time)

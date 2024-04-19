@@ -1,0 +1,7 @@
+[pr_reviewer] # /review #
+extra_instructions="""
+In the 'possible issues' section, emphasize the following:
+Does the code logic have any infinite while loop conditions?
+Does the code handle recursion base case properly?
+...
+"""

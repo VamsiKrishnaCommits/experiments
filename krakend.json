@@ -1,0 +1,30 @@
+{
+  "$schema": "https://www.krakend.io/schema/krakend.json",
+  "version": 3,
+  "name": "KrakenD - API Gateway",
+  "timeout": "3000ms",
+  "cache_ttl": "300s",
+  "output_encoding": "json",
+  "debug_endpoint": true,
+  "echo_endpoint": true,
+  "endpoints": [
+    {
+      "endpoint": "/clio/{userId}",
+      "backend": [
+        {
+          "url_pattern": "/clio/{userId}",
+          "host": [
+            "host.docker.internal:5000"
+          ],
+          "extra_config": {
+            "qos/ratelimit/proxy": {
+              "max_rate": 10,
+              "every": "5s",
+              "capacity": 10
+            }
+          }
+        }
+      ]
+    }
+  ]
+  }
